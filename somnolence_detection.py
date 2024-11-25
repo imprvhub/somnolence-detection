@@ -30,13 +30,16 @@ class DrowsinessDetector:
         (text_width, text_height), _ = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, scale, thickness)
         
         padding = 10
+        bg_color = (0,0,255) if "Somnolence" in text else (0,0,0)
+        text_color = (255,255,255) if "Somnolence" in text else color
+        
         cv2.rectangle(img, 
                      (position[0] - padding, position[1] - text_height - padding),
                      (position[0] + text_width + padding, position[1] + padding),
-                     (0,0,0), 
+                     bg_color, 
                      -1)
         
-        cv2.putText(img, text, position, cv2.FONT_HERSHEY_SIMPLEX, scale, color, thickness)
+        cv2.putText(img, text, position, cv2.FONT_HERSHEY_SIMPLEX, scale, text_color, thickness)
     
     def process_frame(self, frame):
         frame = cv2.flip(frame, 1)

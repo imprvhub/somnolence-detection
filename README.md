@@ -85,6 +85,19 @@ This project showcases computer vision and gesture recognition techniques. The g
 - Technical demonstrations
 - Computer vision development
 
+### Testing
+The project includes automated tests using pytest. Tests cover core functionality, EAR calculations, and system robustness.
+
+```bash
+# Install development dependencies
+pip install -r requirements-dev.txt
+
+# Run tests
+pytest -v
+```
+
+For detailed test coverage: `pytest --cov=somnolence_detection`
+
 #### License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file in the root directory of this repository for detailed terms and conditions.
 
